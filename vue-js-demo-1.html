@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <h1>{{ titre }}</h1>
+       
+        <input v-model="valeur" >
+        <br><br>
+        <button @click="afficher()">GO</button>
+    </div>
+   
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    
+   
+    <script>  
+        const app = new Vue(
+           { 
+            el : '#app ', // div id="app"
+            // les variables
+            data: {
+                titre:'test',
+                valeur:'toto'
+            },
+            methods:{
+                afficher(){
+                   // this.titre = this.titre.toUpperCase();
+                   this.titre = this.valeur.toUpperCase();
+                   this.valeur=''; // vide le champ input
+                }
+            } 
+        });
+    </script>
+</body>
+</html>
